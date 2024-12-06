@@ -1,0 +1,140 @@
+/* General styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 300px;
+  background: #f9f9f9;
+  color: #333;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #f9f9f9;
+}
+
+/* Quote card styles */
+.quote-card {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f0f0f0;
+  text-align: center;
+  animation: glow 2s infinite alternate;
+}
+
+body.dark-mode .quote-card {
+  background: #1e1e1e;
+  border-color: #444;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #da1b60;
+  }
+  to {
+    box-shadow: 0 0 20px #ff8a00;
+  }
+}
+
+#quote {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff8a00, #da1b60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#signature {
+  font-size: 0.9rem;
+  color: #888;
+  text-align: right;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Toggle theme styles */
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background: #ddd;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff8a00, #da1b60);
+  transition: width 1s linear;
+}
